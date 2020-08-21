@@ -1,0 +1,28 @@
+{
+  "name": "action-echo",
+  "version": "1.0.0",
+  "description": "A Github action which echoes your comment",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akshay090/action-echo.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Action"
+  ],
+  "author": "Akshay Ashok -@Akshay090",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akshay090/action-echo/issues"
+  },
+  "homepage": "https://github.com/Akshay090/action-echo#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^4.0.0",
+    "@octokit/rest": "^18.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0"
+  }
+}

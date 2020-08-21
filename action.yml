@@ -1,0 +1,10 @@
+name: "action-echo"
+description: "A Github action which echoes your comment"
+inputs:
+  GITHUB_TOKEN:
+    required: true
+  message:
+    required: false
+runs:
+  using: "node12"
+  main: "index.js"

@@ -1,0 +1,12 @@
+on: [issue_comment, pull_request_review]
+
+jobs:
+  toxic_check:
+    runs-on: ubuntu-latest
+    name: action echo
+    steps:
+      - uses: actions/checkout@v2
+      - name: Safe space - action step
+        uses: Akshay090/action-echo@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
