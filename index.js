@@ -9,9 +9,9 @@ async function run() {
     const customMessage = core.getInput("message");
     const { context } = github;
     const repository = context.payload.repository;
-    const email = await octokit.request("GET /user/emails");
-    const user = await octokit.request("GET /user");
-    console.log(user, "user", email, "email");
+    const email = await octokit.users.getByUsername("Akshay");
+    // const user = await octokit.request("GET /user");
+    console.log(email, "email");
     if (context.payload.review && context.payload.action === "submitted") {
       const issueNumber = context.payload.pull_request.number;
       const reviewComment = context.payload.review.body;
@@ -37,9 +37,9 @@ async function run() {
       ) {
         const issueNumber = context.payload.issue.number;
 
-        // const comment = [context.payload.comment.body];
         const commentObject = context.payload.comment;
-
+        
+        console.log('commentAuthor.user', commentAuthor.user)
         const commentAuthor = commentAuthor.user.login;
         const comment = commentObject.body;
         const message = customMessage
