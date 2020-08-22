@@ -20,7 +20,7 @@ async function run() {
 
       const message = customMessage
         ? customMessage
-        : `Hey @${commentAuthor}! 👋 <br/> You commented ${reviewComment} have a good day🙂`;
+        : `Hey @${email}! 👋 <br/> You commented ${reviewComment} have a good day🙂`;
 
       return octokit.issues.createComment({
         owner: repository.owner.login,
@@ -43,7 +43,7 @@ async function run() {
         const comment = commentObject.body;
         const message = customMessage
           ? customMessage
-          : `Hey @${commentAuthor}! 👋 <br/> You commented ${comment} have a great day🙂`;
+          : `Hey @${email}! 👋 <br/> You commented ${comment} have a great day🙂`;
 
         return octokit.issues.createComment({
           owner: repository.owner.login,
