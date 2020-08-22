@@ -13,7 +13,7 @@ async function run() {
       username: 'Akshay090'
     })
     // const user = await octokit.request("GET /user");
-    console.log(user, "user");
+    console.log(user.data, "user");
     if (context.payload.review && context.payload.action === "submitted") {
       const issueNumber = context.payload.pull_request.number;
       const reviewComment = context.payload.review.body;
@@ -41,8 +41,8 @@ async function run() {
 
         const commentObject = context.payload.comment;
         
-        console.log('commentAuthor.user', commentAuthor.user)
-        const commentAuthor = commentAuthor.user.login;
+        console.log('commentAuthor.user', commentObject.user)
+        const commentAuthor = commentObject.user.login;
         const comment = commentObject.body;
         const message = customMessage
           ? customMessage
