@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: action-echo - action step
-        uses: Akshay090/action-echo@master
+        uses: Akshay090/action-echo@email
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
